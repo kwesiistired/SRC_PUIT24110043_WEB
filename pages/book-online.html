@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book training sessions at SRC Sports Academy">
+    <title>Book Online | SRC Sports Academy</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-trophy"></i>
+                <span>SRC Sports Academy</span>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="new-activities.html">New Sports</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="coaches.html">Coaches</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="book-online.html" class="book-btn active">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <header style="background: linear-gradient(135deg, #0d6b4f 0%, #084535 100%); color: white; padding: 60px 20px; text-align: center;">
+            <div class="container">
+                <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Book a Training Session</h1>
+                <p style="font-size: 1.1rem;">Schedule your training with expert coaches</p>
+            </div>
+        </header>
+
+        <section style="padding: 60px 20px; background: white;">
+            <div class="container">
+                <div style="max-width: 700px; margin: 0 auto;">
+                    <!-- Booking Instructions -->
+                    <div style="background: #f3f7f5; padding: 30px; border-radius: 8px; margin-bottom: 40px; border-left: 4px solid #0d6b4f;">
+                        <h3 style="color: #0d6b4f; margin-bottom: 15px;"><i class="fas fa-info-circle"></i> Booking Information</h3>
+                        <ul style="list-style: none; padding: 0; color: #5f6b76;">
+                            <li style="margin-bottom: 10px;">• Fill out the form below with your details</li>
+                            <li style="margin-bottom: 10px;">• Select your preferred sport and training date</li>
+                            <li style="margin-bottom: 10px;">• Verify the security question</li>
+                            <li>• Submit to receive a confirmation email</li>
+                        </ul>
+                    </div>
+
+                    <!-- Booking Form -->
+                    <form class="academy-form" id="bookingForm" style="background: #f3f7f5; padding: 40px; border-radius: 8px;">
+                        <div class="form-group">
+                            <label for="bookingName" style="display: block; font-weight: 600; margin-bottom: 8px; color: #0d6b4f;">
+                                Full Name <span style="color: #b33131;">*</span>
+                            </label>
+                            <input type="text" id="bookingName" name="bookingName" required aria-label="Full Name"
+                                   style="width: 100%; padding: 12px; border: 2px solid #dce4ea; border-radius: 6px; font-size: 1rem;">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bookingEmail" style="display: block; font-weight: 600; margin-bottom: 8px; color: #0d6b4f;">
+                                Email Address <span style="color: #b33131;">*</span>
+                            </label>
+                            <input type="email" id="bookingEmail" name="bookingEmail" required aria-label="Email Address"
+                                   style="width: 100%; padding: 12px; border: 2px solid #dce4ea; border-radius: 6px; font-size: 1rem;">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bookingPhone" style="display: block; font-weight: 600; margin-bottom: 8px; color: #0d6b4f;">
+                                Phone Number <span style="color: #b33131;">*</span>
+                            </label>
+                            <input type="tel" id="bookingPhone" name="bookingPhone" required aria-label="Phone Number"
+                                   style="width: 100%; padding: 12px; border: 2px solid #dce4ea; border-radius: 6px; font-size: 1rem;">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bookingSport" style="display: block; font-weight: 600; margin-bottom: 8px; color: #0d6b4f;">
+                                Select Sport <span style="color: #b33131;">*</span>
+                            </label>
+                            <select id="bookingSport" name="bookingSport" required aria-label="Sport"
+                                    style="width: 100%; padding: 12px; border: 2px solid #dce4ea; border-radius: 6px; font-size: 1rem;">
+                                <option value="">-- Choose a Sport --</option>
+                                <option value="football">Football</option>
+                                <option value="rugby">Rugby</option>
+                                <option value="ballet">Ballet</option>
+                                <option value="table-tennis">Table Tennis</option>
+                                <option value="handball">Handball</option>
+                                <option value="gymnastics">Gymnastics</option>
+                                <option value="wrestling">Wrestling</option>
+                                <option value="taekwondo">Taekwondo</option>
+                                <option value="judo">Judo</option>
+                                <option value="volleyball">Volleyball</option>
+                            </select>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                            <div class="form-group">
+                                <label for="bookingDate" style="display: block; font-weight: 600; margin-bottom: 8px; color: #0d6b4f;">
+                                    Preferred Date <span style="color: #b33131;">*</span>
+                                </label>
+                                <input type="date" id="bookingDate" name="bookingDate" required aria-label="Preferred Date"
+                                       style="width: 100%; padding: 12px; border: 2px solid #dce4ea; border-radius: 6px; font-size: 1rem;">
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingTime" style="display: block; font-weight: 600; margin-bottom: 8px; color: #0d6b4f;">
+                                    Preferred Time <span style="color: #b33131;">*</span>
+                                </label>
+                                <input type="time" id="bookingTime" name="bookingTime" required aria-label="Preferred Time"
+                                       style="width: 100%; padding: 12px; border: 2px solid #dce4ea; border-radius: 6px; font-size: 1rem;">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="groupSize" style="display: block; font-weight: 600; margin-bottom: 8px; color: #0d6b4f;">
+                                Group Size <span style="color: #b33131;">*</span>
+                            </label>
+                            <select id="groupSize" name="groupSize" required aria-label="Group Size"
+                                    style="width: 100%; padding: 12px; border: 2px solid #dce4ea; border-radius: 6px; font-size: 1rem;">
+                                <option value="">-- Select Group Size --</option>
+                                <option value="1">Individual (1 person)</option>
+                                <option value="2-5">Small Group (2-5 people)</option>
+                                <option value="6-10">Medium Group (6-10 people)</option>
+                                <option value="11+">Large Group (11+ people)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bookingNotes" style="display: block; font-weight: 600; margin-bottom: 8px; color: #0d6b4f;">
+                                Special Requests
+                            </label>
+                            <textarea id="bookingNotes" name="bookingNotes" rows="4" placeholder="Skill level, experience, special requirements..."
+                                      aria-label="Special Requests"
+                                      style="width: 100%; padding: 12px; border: 2px solid #dce4ea; border-radius: 6px; font-size: 1rem; font-family: inherit; resize: vertical;"></textarea>
+                        </div>
+
+                        <div class="captcha-container" style="margin: 25px 0; padding: 20px; background: white; border-radius: 6px; border: 2px solid #dce4ea;">
+                            <label for="bookingCaptcha" style="display: block; font-weight: 600; margin-bottom: 10px; color: #0d6b4f;">
+                                Security Verification <span style="color: #b33131;">*</span>
+                            </label>
+                            <p style="color: #5f6b76; margin-bottom: 15px;">
+                                What is <span class="captcha-question" style="font-weight: bold; color: #0d6b4f;">5 + 8</span>?
+                            </p>
+                            <input type="number" id="bookingCaptcha" name="captcha" required aria-label="CAPTCHA answer" placeholder="Enter your answer"
+                                   style="width: 100%; padding: 12px; border: 2px solid #dce4ea; border-radius: 6px; font-size: 1rem;">
+                        </div>
+
+                        <div class="form-message" style="display: none; padding: 15px; border-radius: 6px; margin-bottom: 20px; text-align: center; font-weight: 600;"></div>
+
+                        <button type="submit" class="form-button" style="background: #0d6b4f; color: white; padding: 12px 30px; width: 100%; font-weight: 600; border-radius: 6px; cursor: pointer; transition: all 0.3s ease;">
+                            Confirm Booking
+                        </button>
+
+                        <p style="text-align: center; color: #5f6b76; margin-top: 20px; font-size: 0.95rem;">
+                            Not a member yet? <a href="register.html" style="color: #0d6b4f; font-weight: 600;">Register now</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: 40px 20px; background: #f3f7f5;">
+            <div class="container">
+                <h3 style="text-align: center; font-size: 1.3rem; margin-bottom: 30px; color: #0d6b4f;">Why Book With Us?</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+                    <div style="text-align: center;">
+                        <i class="fas fa-star" style="font-size: 2rem; color: #f2b441; margin-bottom: 15px;"></i>
+                        <h4 style="color: #0d6b4f; margin-bottom: 10px;">Expert Coaches</h4>
+                        <p style="color: #5f6b76; font-size: 0.95rem;">Certified trainers with years of experience</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fas fa-clock" style="font-size: 2rem; color: #f2b441; margin-bottom: 15px;"></i>
+                        <h4 style="color: #0d6b4f; margin-bottom: 10px;">Flexible Scheduling</h4>
+                        <p style="color: #5f6b76; font-size: 0.95rem;">Sessions tailored to your availability</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fas fa-check-circle" style="font-size: 2rem; color: #f2b441; margin-bottom: 15px;"></i>
+                        <h4 style="color: #0d6b4f; margin-bottom: 10px;">Instant Confirmation</h4>
+                        <p style="color: #5f6b76; font-size: 0.95rem;">Get confirmed via email immediately</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" style="background: #101820; color: white; padding: 60px 20px 20px;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 30px;">
+                <div>
+                    <h4 style="margin-bottom: 15px; color: #f2b441;">SRC Sports Academy</h4>
+                    <p style="color: rgba(255, 255, 255, 0.8);">Professional sports training.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 15px; color: #f2b441;">Contact</h4>
+                    <p style="color: rgba(255, 255, 255, 0.8);">
+                        Email: info@srcacademy.edu<br>
+                        Phone: +233 XXX XXX XXXX
+                    </p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px; text-align: center; color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">
+                <p>&copy; 2026 SRC Sports Academy.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

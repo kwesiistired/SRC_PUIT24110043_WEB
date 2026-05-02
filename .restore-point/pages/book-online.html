@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Online | SRC Sports Academy</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</head>
+<body data-page="booking">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="brand" href="../index.html">SRC Sports Academy</a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="main-menu" aria-expanded="false">☰</button>
+      <div class="nav-panel" id="main-menu">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="new-activities.html">New Activities</a>
+        <a href="events.html">Events</a>
+        <a href="blog.html">Blog</a>
+        <a href="coaches.html">Coaches</a>
+        <a href="testing-report.html">Testing</a>
+        <a href="register.html">Register</a>
+        <a class="active nav-cta" href="book-online.html">Book Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content" class="page-main">
+    <section class="page-hero">
+      <p class="eyebrow">Online Booking</p>
+      <h1>Book a training session</h1>
+      <p>Select a sport, date, and group size so the academy can confirm the right coach and training space.</p>
+    </section>
+
+    <section class="form-shell">
+      <form class="academy-form" data-form-name="booking">
+        <label for="booking-name">Full name</label>
+        <input id="booking-name" name="booking-name" type="text" required>
+
+        <label for="booking-email">Email address</label>
+        <input id="booking-email" name="booking-email" type="email" required>
+
+        <label for="booking-sport">Sport</label>
+        <select id="booking-sport" name="booking-sport" required>
+          <option value="">Choose a sport</option>
+          <option>Football</option>
+          <option>Rugby</option>
+          <option>Ballet</option>
+          <option>Table Tennis</option>
+          <option>Handball</option>
+          <option>Gymnastics</option>
+          <option>Wrestling</option>
+          <option>Taekwondo</option>
+          <option>Judo</option>
+          <option>Volleyball</option>
+        </select>
+
+        <label for="booking-date">Preferred date</label>
+        <input id="booking-date" name="booking-date" type="date" required>
+
+        <label for="group-size">Group size</label>
+        <select id="group-size" name="group-size" required>
+          <option value="">Choose a size</option>
+          <option>Individual</option>
+          <option>Small group</option>
+          <option>Team session</option>
+        </select>
+
+        <label for="notes">Special requests</label>
+        <textarea id="notes" name="notes" placeholder="Skill level, time preference, or accessibility notes"></textarea>
+
+        <label for="booking-captcha">What is 4 + 3?</label>
+        <input id="booking-captcha" name="captcha" type="number" required>
+        <p class="form-message" aria-live="polite"></p>
+        <button class="btn primary" type="submit">Confirm Booking</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <h2>SRC Sports Academy</h2>
+      <p>Simple booking for structured training sessions.</p>
+    </div>
+    <div class="social-links">
+      <a href="register.html">Register</a>
+      <a href="events.html">Events</a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | SRC Sports Academy</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</head>
+<body data-page="blog">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="brand" href="../index.html">SRC Sports Academy</a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="main-menu" aria-expanded="false">☰</button>
+      <div class="nav-panel" id="main-menu">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="new-activities.html">New Activities</a>
+        <a href="events.html">Events</a>
+        <a class="active" href="blog.html">Blog</a>
+        <a href="coaches.html">Coaches</a>
+        <a href="testing-report.html">Testing</a>
+        <a href="register.html">Register</a>
+        <a class="nav-cta" href="book-online.html">Book Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content" class="page-main">
+    <section class="page-hero">
+      <p class="eyebrow">Academy Updates</p>
+      <h1>News from the field</h1>
+      <p>Announcements, training notes, and community stories from SRC Sports Academy.</p>
+    </section>
+
+    <section class="blog-grid">
+      <article class="post-card searchable" data-search="academy launch news">
+        <p class="post-date">May 1, 2026</p>
+        <h2>Welcome to SRC Sports Academy</h2>
+        <p>New training pathways are opening across football, rugby, ballet, martial arts, and team sports.</p>
+        <a href="register.html">Register interest</a>
+      </article>
+      <article class="post-card searchable" data-search="training safety protocol">
+        <p class="post-date">Apr 28, 2026</p>
+        <h2>Safety-first training</h2>
+        <p>Coaches are using structured warmups, equipment checks, and skill-level grouping for safer sessions.</p>
+        <a href="coaches.html">Meet coaches</a>
+      </article>
+      <article class="post-card searchable" data-search="new sports wrestling taekwondo judo volleyball">
+        <p class="post-date">Apr 20, 2026</p>
+        <h2>New sports launching</h2>
+        <p>Wrestling, Taekwondo, Judo, and Volleyball expand the academy's range of student opportunities.</p>
+        <a href="new-activities.html">Explore activities</a>
+      </article>
+    </section>
+
+    <section class="forum-box">
+      <h2>Join the discussion</h2>
+      <form class="captcha-form" data-form-name="blog comment">
+        <label for="comment-name">Name</label>
+        <input id="comment-name" type="text" required>
+        <label for="comment-text">Comment</label>
+        <textarea id="comment-text" required></textarea>
+        <label for="comment-captcha">What is 4 + 3?</label>
+        <input id="comment-captcha" name="captcha" type="number" required>
+        <p class="form-message" aria-live="polite"></p>
+        <button class="btn primary" type="submit">Post Comment</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <h2>SRC Sports Academy</h2>
+      <p>Stories, notices, and training updates.</p>
+    </div>
+    <div class="social-links">
+      <a href="events.html">Events</a>
+      <a href="coaches.html">Coaches</a>
+    </div>
+  </footer>
+</body>
+</html>
