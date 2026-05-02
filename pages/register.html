@@ -1,170 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Register for SRC Sports Academy membership">
-    <title>Register | SRC Sports Academy</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | SRC Sports Academy</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+  <script src="../js/main.js" defer></script>
 </head>
-<body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-trophy"></i>
-                <span>SRC Sports Academy</span>
-            </div>
-            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="new-activities.html">New Sports</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="coaches.html">Coaches</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="register.html" class="active">Register</a></li>
-                <li><a href="book-online.html" class="book-btn">Book Now</a></li>
-            </ul>
-        </div>
+<body data-page="register">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="brand" href="../index.html">SRC Sports Academy</a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="main-menu" aria-expanded="false">☰</button>
+      <div class="nav-panel" id="main-menu">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="new-activities.html">New Activities</a>
+        <a href="events.html">Events</a>
+        <a href="blog.html">Blog</a>
+        <a href="coaches.html">Coaches</a>
+        <a href="testing-report.html">Testing</a>
+        <a class="active" href="register.html">Register</a>
+        <a class="nav-cta" href="book-online.html">Book Now</a>
+      </div>
     </nav>
+  </header>
 
-    <main id="main-content">
-        <header style="background: linear-gradient(135deg, #0d6b4f 0%, #084535 100%); color: white; padding: 60px 20px; text-align: center;">
-            <div class="container">
-                <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Join Our Academy</h1>
-                <p style="font-size: 1.1rem;">Register to become part of our sports community</p>
-            </div>
-        </header>
+  <main id="main-content" class="page-main">
+    <section class="page-hero">
+      <p class="eyebrow">Membership</p>
+      <h1>Join the academy</h1>
+      <p>Create a simple membership request so coaches can match you with the right sport and training level.</p>
+    </section>
 
-        <section style="padding: 60px 20px; background: white;">
-            <div class="container">
-                <div style="max-width: 600px; margin: 0 auto;">
-                    <form class="academy-form" id="registerForm" style="background: #f3f7f5; padding: 40px; border-radius: 8px;">
-                        <div class="form-group">
-                            <label for="fullName" style="display: block; font-weight: 600; margin-bottom: 8px; color: #0d6b4f;">
-                                Full Name <span style="color: #b33131;">*</span>
-                            </label>
-                            <input type="text" id="fullName" name="fullName" required aria-label="Full Name"
-                                   style="width: 100%; padding: 12px; border: 2px solid #dce4ea; border-radius: 6px; font-size: 1rem;">
-                        </div>
+    <section class="form-shell">
+      <form class="academy-form" data-form-name="registration">
+        <label for="full-name">Full name</label>
+        <input id="full-name" name="full-name" type="text" required>
 
-                        <div class="form-group">
-                            <label for="email" style="display: block; font-weight: 600; margin-bottom: 8px; color: #0d6b4f;">
-                                Email Address <span style="color: #b33131;">*</span>
-                            </label>
-                            <input type="email" id="email" name="email" required aria-label="Email Address"
-                                   style="width: 100%; padding: 12px; border: 2px solid #dce4ea; border-radius: 6px; font-size: 1rem;">
-                        </div>
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" required>
 
-                        <div class="form-group">
-                            <label for="phone" style="display: block; font-weight: 600; margin-bottom: 8px; color: #0d6b4f;">
-                                Phone Number <span style="color: #b33131;">*</span>
-                            </label>
-                            <input type="tel" id="phone" name="phone" required aria-label="Phone Number"
-                                   style="width: 100%; padding: 12px; border: 2px solid #dce4ea; border-radius: 6px; font-size: 1rem;">
-                        </div>
+        <label for="phone">Phone number</label>
+        <input id="phone" name="phone" type="tel" required>
 
-                        <div class="form-group">
-                            <label for="sport" style="display: block; font-weight: 600; margin-bottom: 8px; color: #0d6b4f;">
-                                Preferred Sport <span style="color: #b33131;">*</span>
-                            </label>
-                            <select id="sport" name="sport" required aria-label="Preferred Sport"
-                                    style="width: 100%; padding: 12px; border: 2px solid #dce4ea; border-radius: 6px; font-size: 1rem;">
-                                <option value="">-- Select a Sport --</option>
-                                <option value="football">Football</option>
-                                <option value="rugby">Rugby</option>
-                                <option value="ballet">Ballet</option>
-                                <option value="table-tennis">Table Tennis</option>
-                                <option value="handball">Handball</option>
-                                <option value="gymnastics">Gymnastics</option>
-                                <option value="wrestling">Wrestling</option>
-                                <option value="taekwondo">Taekwondo</option>
-                                <option value="judo">Judo</option>
-                                <option value="volleyball">Volleyball</option>
-                            </select>
-                        </div>
+        <label for="sport">Preferred sport</label>
+        <select id="sport" name="sport" required>
+          <option value="">Choose a sport</option>
+          <option>Football</option>
+          <option>Rugby</option>
+          <option>Ballet</option>
+          <option>Table Tennis</option>
+          <option>Handball</option>
+          <option>Gymnastics</option>
+          <option>Wrestling</option>
+          <option>Taekwondo</option>
+          <option>Judo</option>
+          <option>Volleyball</option>
+        </select>
 
-                        <div class="form-group" style="margin: 25px 0;">
-                            <label style="display: flex; align-items: center; cursor: pointer;">
-                                <input type="checkbox" name="subscribe" value="yes" style="margin-right: 10px; width: 18px; height: 18px;">
-                                <span style="color: #5f6b76;">Subscribe to academy emails and updates</span>
-                            </label>
-                        </div>
+        <label class="checkbox-line">
+          <input type="checkbox" name="updates">
+          Receive academy updates by email
+        </label>
 
-                        <div class="captcha-container" style="margin: 25px 0; padding: 20px; background: white; border-radius: 6px; border: 2px solid #dce4ea;">
-                            <label for="captchaInput" style="display: block; font-weight: 600; margin-bottom: 10px; color: #0d6b4f;">
-                                Security Verification <span style="color: #b33131;">*</span>
-                            </label>
-                            <p style="color: #5f6b76; margin-bottom: 15px;">
-                                What is <span class="captcha-question" style="font-weight: bold; color: #0d6b4f;">7 + 5</span>?
-                            </p>
-                            <input type="number" id="captchaInput" name="captcha" required aria-label="CAPTCHA answer" placeholder="Enter your answer"
-                                   style="width: 100%; padding: 12px; border: 2px solid #dce4ea; border-radius: 6px; font-size: 1rem;">
-                        </div>
+        <label for="captcha">What is 4 + 3?</label>
+        <input id="captcha" name="captcha" type="number" required>
+        <p class="form-message" aria-live="polite"></p>
+        <button class="btn primary" type="submit">Register Now</button>
+      </form>
+    </section>
+  </main>
 
-                        <div class="form-message" style="display: none; padding: 15px; border-radius: 6px; margin-bottom: 20px; text-align: center; font-weight: 600;"></div>
-
-                        <button type="submit" class="form-button" style="background: #0d6b4f; color: white; padding: 12px 30px; width: 100%; font-weight: 600; border-radius: 6px; cursor: pointer; transition: all 0.3s ease;">
-                            Register Now
-                        </button>
-
-                        <p style="text-align: center; color: #5f6b76; margin-top: 20px; font-size: 0.95rem;">
-                            Already registered? <a href="book-online.html" style="color: #0d6b4f; font-weight: 600;">Book a session</a>
-                        </p>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <section style="padding: 40px 20px; background: #f3f7f5; text-align: center;">
-            <div class="container">
-                <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: #0d6b4f;">Why Register?</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto;">
-                    <div style="padding: 20px;">
-                        <i class="fas fa-user-check" style="font-size: 2rem; color: #f2b441; margin-bottom: 10px;"></i>
-                        <p style="color: #5f6b76;">Membership Benefits</p>
-                    </div>
-                    <div style="padding: 20px;">
-                        <i class="fas fa-calendar" style="font-size: 2rem; color: #f2b441; margin-bottom: 10px;"></i>
-                        <p style="color: #5f6b76;">Access to All Events</p>
-                    </div>
-                    <div style="padding: 20px;">
-                        <i class="fas fa-users" style="font-size: 2rem; color: #f2b441; margin-bottom: 10px;"></i>
-                        <p style="color: #5f6b76;">Join Our Community</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer" style="background: #101820; color: white; padding: 60px 20px 20px;">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 30px;">
-                <div>
-                    <h4 style="margin-bottom: 15px; color: #f2b441;">SRC Sports Academy</h4>
-                    <p style="color: rgba(255, 255, 255, 0.8);">Excellence in sports development.</p>
-                </div>
-                <div>
-                    <h4 style="margin-bottom: 15px; color: #f2b441;">Links</h4>
-                    <ul style="list-style: none; padding: 0;">
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="book-online.html">Book</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px; text-align: center; color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">
-                <p>&copy; 2026 SRC Sports Academy.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="../js/main.js"></script>
+  <footer class="site-footer">
+    <div>
+      <h2>SRC Sports Academy</h2>
+      <p>Membership is the first step into structured training.</p>
+    </div>
+    <div class="social-links">
+      <a href="book-online.html">Book a session</a>
+      <a href="about.html">About</a>
+    </div>
+  </footer>
 </body>
 </html>

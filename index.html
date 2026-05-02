@@ -1,253 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SRC Sports Academy - Modern Sports Programs and Training">
-    <title>SRC Sports Academy | Home</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRC Sports Academy | Home</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+  <script src="js/main.js" defer></script>
 </head>
-<body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-
-    <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-trophy"></i>
-                <span>SRC Sports Academy</span>
-            </div>
-            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="pages/about.html">About</a></li>
-                <li><a href="pages/new-activities.html">New Sports</a></li>
-                <li><a href="pages/events.html">Events</a></li>
-                <li><a href="pages/coaches.html">Coaches</a></li>
-                <li><a href="pages/blog.html">Blog</a></li>
-                <li><a href="pages/register.html">Register</a></li>
-                <li><a href="pages/book-online.html" class="book-btn">Book Now</a></li>
-            </ul>
-        </div>
+<body data-page="home">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="brand" href="index.html">SRC Sports Academy</a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="main-menu" aria-expanded="false">☰</button>
+      <div class="nav-panel" id="main-menu">
+        <a class="active" href="index.html">Home</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/new-activities.html">New Activities</a>
+        <a href="pages/events.html">Events</a>
+        <a href="pages/blog.html">Blog</a>
+        <a href="pages/coaches.html">Coaches</a>
+        <a href="pages/testing-report.html">Testing</a>
+        <a href="pages/register.html">Register</a>
+        <a class="nav-cta" href="pages/book-online.html">Book Now</a>
+      </div>
     </nav>
+  </header>
 
-    <!-- Hero Section with Background Video -->
-    <header class="hero" role="banner">
-        <video autoplay muted loop playsinline class="hero-video" aria-label="Sports academy promotional video">
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-        </video>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Welcome to SRC Sports Academy</h1>
-            <p>Excellence in Sports Development & Community Engagement</p>
-            <p class="hero-subtext">Training excellence in Football, Rugby, Ballet, Taekwondo, Judo, and more!</p>
-            <a href="pages/book-online.html" class="cta-button">Book Training Session</a>
+  <main id="main-content">
+    <section class="hero">
+      <video class="hero-video" autoplay muted loop playsinline poster="images/football.jpg">
+        <source src="images/sports-training.webm" type="video/webm">
+      </video>
+      <div class="hero-overlay">
+        <p class="eyebrow">Pentecost University SRC Initiative</p>
+        <h1>SRC Sports Academy</h1>
+        <p>Training, teamwork, discipline, and community sport in one modern academy.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="pages/book-online.html">Book a Session</a>
+          <a class="btn secondary" href="pages/register.html">Join the Academy</a>
         </div>
-    </header>
+      </div>
+    </section>
 
-    <main id="main-content">
-        <!-- Search Section -->
-        <section class="search-section" role="region" aria-label="Search sports programs">
-            <div class="container">
-                <h2>Find Your Sport</h2>
-                <div class="search-wrapper">
-                    <input type="text" id="searchInput" class="search-box" placeholder="Search sports programs, events, or coaches..."
-                           aria-label="Search sports programs">
-                    <button onclick="searchContent()" class="search-btn" aria-label="Search button">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-            </div>
-        </section>
+    <section class="search-band" aria-labelledby="search-title">
+      <div>
+        <h2 id="search-title">Find a sport, event, or announcement</h2>
+        <p>Search cards across this page using jQuery-powered filtering.</p>
+      </div>
+      <label class="search-label" for="site-search">Search website content</label>
+      <input id="site-search" class="site-search" type="search" placeholder="Search football, judo, booking..." aria-describedby="search-help">
+      <span id="search-help" class="sr-only">Results filter automatically as you type.</span>
+    </section>
 
-        <!-- Featured Sports Section -->
-        <section class="sports-showcase" role="region" aria-label="Featured sports programs">
-            <div class="container">
-                <h2>Our Sports Programs</h2>
-                <div class="sports-grid" id="sportsGrid">
-                    <article class="sport-card" data-sport="football">
-                        <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&h=300&fit=crop"
-                             alt="Football players training on field">
-                        <h3>Football</h3>
-                        <p>Professional football training and development programs</p>
-                        <a href="pages/book-online.html" class="card-link">Learn More</a>
-                    </article>
-                    <article class="sport-card" data-sport="rugby">
-                        <img src="https://images.unsplash.com/photo-1535587191197-29af16dd8900?w=400&h=300&fit=crop"
-                             alt="Rugby players in action">
-                        <h3>Rugby</h3>
-                        <p>Elite rugby coaching and competition readiness</p>
-                        <a href="pages/book-online.html" class="card-link">Learn More</a>
-                    </article>
-                    <article class="sport-card" data-sport="volleyball">
-                        <img src="https://images.unsplash.com/photo-1590127957529-0ac8209da488?w=400&h=300&fit=crop"
-                             alt="Volleyball team in action">
-                        <h3>Volleyball</h3>
-                        <p>Team building and volleyball excellence training</p>
-                        <a href="pages/book-online.html" class="card-link">Learn More</a>
-                    </article>
-                    <article class="sport-card" data-sport="taekwondo">
-                        <img src="https://images.unsplash.com/photo-1571902839787-142f08e5fbf0?w=400&h=300&fit=crop"
-                             alt="Taekwondo practitioners">
-                        <h3>Taekwondo</h3>
-                        <p>Martial arts discipline and self-defense training</p>
-                        <a href="pages/book-online.html" class="card-link">Learn More</a>
-                    </article>
-                    <article class="sport-card" data-sport="gymnastics">
-                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=300&fit=crop"
-                             alt="Gymnast performing">
-                        <h3>Gymnastics</h3>
-                        <p>Artistic gymnastics and body conditioning</p>
-                        <a href="pages/book-online.html" class="card-link">Learn More</a>
-                    </article>
-                    <article class="sport-card" data-sport="handball">
-                        <img src="https://images.unsplash.com/photo-1599720696344-3ba0b7a76b23?w=400&h=300&fit=crop"
-                             alt="Handball players">
-                        <h3>Handball</h3>
-                        <p>Dynamic team handball coaching programs</p>
-                        <a href="pages/book-online.html" class="card-link">Learn More</a>
-                    </article>
-                    <article class="sport-card" data-sport="wrestling">
-                        <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=400&h=300&fit=crop"
-                             alt="Wrestling match">
-                        <h3>Wrestling</h3>
-                        <p>Professional wrestling training and technique mastery</p>
-                        <a href="pages/book-online.html" class="card-link">Learn More</a>
-                    </article>
-                    <article class="sport-card" data-sport="judo">
-                        <img src="https://images.unsplash.com/photo-1553776303-83d440c0a47f?w=400&h=300&fit=crop"
-                             alt="Judo athletes">
-                        <h3>Judo</h3>
-                        <p>Japanese martial art focusing on leverage and technique</p>
-                        <a href="pages/book-online.html" class="card-link">Learn More</a>
-                    </article>
-                    <article class="sport-card" data-sport="ballet">
-                        <img src="https://images.unsplash.com/photo-1511380828551-38fe27f21ae3?w=400&h=300&fit=crop"
-                             alt="Ballet dancers">
-                        <h3>Ballet</h3>
-                        <p>Classical ballet training and artistic development</p>
-                        <a href="pages/book-online.html" class="card-link">Learn More</a>
-                    </article>
-                    <article class="sport-card" data-sport="table-tennis">
-                        <img src="https://images.unsplash.com/photo-1592280191338-e6534047b900?w=400&h=300&fit=crop"
-                             alt="Table tennis players">
-                        <h3>Table Tennis</h3>
-                        <p>Precision and speed training for competitive table tennis</p>
-                        <a href="pages/book-online.html" class="card-link">Learn More</a>
-                    </article>
-                </div>
-            </div>
-        </section>
+    <section class="section" aria-labelledby="sports-title">
+      <div class="section-heading">
+        <p class="eyebrow">Sports Programs</p>
+        <h2 id="sports-title">All sports offered</h2>
+      </div>
+      <div class="sport-grid">
+        <article class="sport-card searchable" data-search="football academy training fixtures">
+          <img src="images/football.jpg" alt="Football match in progress">
+          <h3>Football</h3>
+        </article>
+        <article class="sport-card searchable" data-search="rugby strength contact teamwork">
+          <img src="images/rugby.jpg" alt="Rugby players in action">
+          <h3>Rugby</h3>
+        </article>
+        <article class="sport-card searchable" data-search="ballet balance movement discipline">
+          <img src="images/ballet.jpg" alt="Ballet dancers training">
+          <h3>Ballet</h3>
+        </article>
+        <article class="sport-card searchable" data-search="table tennis speed reflex">
+          <img src="images/table-tennis.jpg" alt="Table tennis match">
+          <h3>Table Tennis</h3>
+        </article>
+        <article class="sport-card searchable" data-search="handball fixtures competitions">
+          <img src="images/handball.jpg" alt="Handball players">
+          <h3>Handball</h3>
+        </article>
+        <article class="sport-card searchable" data-search="gymnastics flexibility strength">
+          <img src="images/gymnastics.jpg" alt="Gymnast training">
+          <h3>Gymnastics</h3>
+        </article>
+        <article class="sport-card searchable" data-search="wrestling new activity strength">
+          <img src="images/wrestling.jpg" alt="Wrestling match">
+          <h3>Wrestling</h3>
+        </article>
+        <article class="sport-card searchable" data-search="taekwondo new activity martial arts">
+          <img src="images/taekwondo.jpg" alt="Taekwondo athletes">
+          <h3>Taekwondo</h3>
+        </article>
+        <article class="sport-card searchable" data-search="judo new activity martial arts">
+          <img src="images/judo.jpg" alt="Judo athletes">
+          <h3>Judo</h3>
+        </article>
+        <article class="sport-card searchable" data-search="volleyball new activity team sport">
+          <img src="images/volleyball.jpg" alt="Volleyball players at the net">
+          <h3>Volleyball</h3>
+        </article>
+      </div>
+    </section>
 
-        <!-- Highlights Section -->
-        <section class="highlights" role="region" aria-label="Academy highlights">
-            <div class="container">
-                <h2>Why Choose SRC Sports Academy?</h2>
-                <div class="highlights-grid">
-                    <div class="highlight-card">
-                        <i class="fas fa-medal"></i>
-                        <h3>Expert Coaches</h3>
-                        <p>Highly trained professionals with international experience in all sports disciplines</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-users"></i>
-                        <h3>Community Focus</h3>
-                        <p>Dedicated to developing talent in the surrounding community and university</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-university"></i>
-                        <h3>University Partnership</h3>
-                        <p>Backed by Pentecost University and SRC funding for sustainable development</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i class="fas fa-target"></i>
-                        <h3>Excellence Focus</h3>
-                        <p>Committed to competitive sports development at all levels</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="split-section">
+      <div>
+        <p class="eyebrow">Highlights</p>
+        <h2>Built for campus and community</h2>
+        <p>The academy connects students, coaches, parents, alumni, and local athletes through structured sports development, clear schedules, and simple online booking.</p>
+        <a class="text-link" href="pages/events.html">View upcoming events</a>
+      </div>
+      <div class="media-frame">
+        <iframe title="Sports coverage" src="https://www.youtube.com/embed/52Gg9CqhbP8" allowfullscreen></iframe>
+      </div>
+    </section>
+  </main>
 
-        <!-- Media Coverage Section -->
-        <section class="media-section" role="region" aria-label="Media coverage">
-            <div class="container">
-                <h2>Sports in the News</h2>
-                <div class="media-grid">
-                    <article class="media-item">
-                        <h3>Training Excellence</h3>
-                        <p>Stay updated with the latest sports training methodologies and tips from our expert coaches.</p>
-                        <a href="pages/blog.html" class="media-link">Visit Our Blog</a>
-                    </article>
-                    <article class="media-item">
-                        <h3>Community Events</h3>
-                        <p>Discover upcoming competitions, training sessions, and community engagement activities.</p>
-                        <a href="pages/events.html" class="media-link">View Events</a>
-                    </article>
-                    <article class="media-item">
-                        <h3>Athlete Spotlight</h3>
-                        <p>Meet our talented coaches and learn about their expertise in various sports disciplines.</p>
-                        <a href="pages/coaches.html" class="media-link">Meet Coaches</a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call to Action -->
-        <section class="cta-section" role="region" aria-label="Call to action">
-            <div class="container">
-                <h2>Ready to Join Us?</h2>
-                <p>Start your sports journey with SRC Sports Academy today!</p>
-                <div class="cta-buttons">
-                    <a href="pages/register.html" class="cta-button primary" aria-label="Register for membership">Register Now</a>
-                    <a href="pages/book-online.html" class="cta-button secondary" aria-label="Book training session">Book a Session</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>About SRC Sports Academy</h4>
-                    <p>Promoting sports excellence and community engagement through Pentecost University. Funded by community partners and sports bodies.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="pages/about.html">About</a></li>
-                        <li><a href="pages/register.html">Register</a></li>
-                        <li><a href="pages/book-online.html">Book</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Follow Us</h4>
-                    <div class="social-icons">
-                        <a href="https://facebook.com/srcacademy" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-                        <a href="https://twitter.com/srcacademy" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-                        <a href="https://instagram.com/srcacademy" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="https://youtube.com/@srcacademy" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Stats</h4>
-                    <p>Visitors: <span id="visitorCount">0</span></p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 SRC Sports Academy. All rights reserved. | Pentecost University</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/main.js"></script>
+  <footer class="site-footer">
+    <div>
+      <h2>SRC Sports Academy</h2>
+      <p>Developing discipline, confidence, and sporting excellence.</p>
+      <p class="counter">Visits: <span id="visitor-count">0</span></p>
+    </div>
+    <div class="social-links" aria-label="Social media links">
+      <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">YouTube</a>
+    </div>
+  </footer>
 </body>
 </html>
